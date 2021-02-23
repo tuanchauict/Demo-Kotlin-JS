@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="DemoKtJS-1.0-SNAPSHOT">
+    <output-path>$PROJECT_DIR$/build/libs</output-path>
+    <root id="archive" name="DemoKtJS-1.0-SNAPSHOT.jar">
+      <element id="module-output" name="DemoKtJS.main" />
+    </root>
+  </artifact>
+</component>
