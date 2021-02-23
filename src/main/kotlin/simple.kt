@@ -3,6 +3,7 @@ import kotlinx.browser.window
 import kotlinx.html.InputType
 import kotlinx.html.button
 import kotlinx.html.dom.append
+import kotlinx.html.id
 import kotlinx.html.input
 import kotlinx.html.js.a
 import kotlinx.html.js.b
@@ -72,5 +73,14 @@ fun onLoad() {
                 }
             }
         }
+
+        p("counter") { id = "counter-interval" }
     }
+
+    val intervalCounterElement = document.getElementById("counter-interval")!!
+    var intervalCounter = 0
+    window.setInterval({
+        intervalCounterElement.textContent = "Interval: $intervalCounter"
+        intervalCounter += 1
+    }, 500)
 }
