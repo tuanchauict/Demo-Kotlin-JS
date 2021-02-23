@@ -1,5 +1,14 @@
+import kotlinx.browser.document
+import kotlinx.browser.window
+
 fun main() {
-    console.log("Hello, ${greet()}")
+    window.onload = {
+        onLoad()
+    }
 }
 
-fun greet() = "world"
+fun onLoad() {
+    val root = document.getElementById("root") ?: return
+    root.textContent = "This is a text in the root DIV"
+    root.setAttribute("style", "color: red;")
+}
