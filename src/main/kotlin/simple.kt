@@ -1,5 +1,10 @@
 import kotlinx.browser.document
 import kotlinx.browser.window
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import kotlinx.html.InputType
 import kotlinx.html.button
 import kotlinx.html.dom.append
@@ -13,6 +18,7 @@ import kotlinx.html.js.onClickFunction
 import kotlinx.html.js.p
 import kotlinx.html.js.span
 import kotlinx.html.style
+import org.w3c.dom.Element
 import org.w3c.dom.HTMLButtonElement
 import org.w3c.dom.HTMLInputElement
 
@@ -75,6 +81,8 @@ fun onLoad() {
         }
 
         p("counter") { id = "counter-interval" }
+
+        p("counter") { id = "counter-coroutines" }
     }
 
     val intervalCounterElement = document.getElementById("counter-interval")!!
@@ -83,4 +91,17 @@ fun onLoad() {
         intervalCounterElement.textContent = "Interval: $intervalCounter"
         intervalCounter += 1
     }, 500)
+
+    GlobalScope.launch {
+        count(document.getElementById("counter-coroutines")!!)
+    }
+}
+
+private suspend fun count(element: Element) = withContext(Dispatchers.Main){
+    var counter = 0
+    while (true) {
+        element.textContent = "Coroutines: $counter"
+        delay(500)
+        counter += 1
+    }
 }
