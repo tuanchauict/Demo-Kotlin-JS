@@ -21,7 +21,7 @@ fun onLoad() {
     root.setAttribute("style", "color: black;")
 
     console.log(root)
-    println(root)
+    println(root.innerHTML)
 
     root.append {
         h1 { +"This is a header" }
@@ -49,4 +49,7 @@ fun onLoad() {
             }
         }
     }
+
+    console.log(root)
+    println(root.innerHTML)
 }
