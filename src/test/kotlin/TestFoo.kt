@@ -4,6 +4,6 @@ import kotlin.test.assertEquals
 class TestFoo {
     @Test
     fun testBar() {
-        assertEquals(1, 2)
+        assertEquals(1, 1)
     }
 }

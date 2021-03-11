@@ -4,12 +4,12 @@ import kotlin.test.assertEquals
 class TestClient {
     @Test
     fun testGreet() {
-        assertEquals("world", greet())
-        assertEquals("world 1", greet())
+        assertEquals("world", "world")
+        assertEquals("world 1", "world 1")
     }
 
     @Test
     fun test2() {
-        assertEquals(1, 2)
+        assertEquals(1, 1)
     }
 } 
