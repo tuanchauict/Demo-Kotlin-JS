@@ -8,8 +8,8 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: 11
-      - run: pwd
       - run: ./gradlew test
       - uses: actions/upload-artifact@v2
         with:
-          path: build/reports/
+          name: test-result
+          path: build/reports/tests/test/index.html
