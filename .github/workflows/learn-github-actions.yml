@@ -1,7 +1,7 @@
 name: learn-github-actions
 on: [push]
 jobs:
-  Unit test:
+  unit_test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
