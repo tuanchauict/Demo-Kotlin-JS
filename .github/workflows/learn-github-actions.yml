@@ -9,7 +9,8 @@ jobs:
         with:
           java-version: 11
       - run: ./gradlew test
-      - uses: actions/upload-artifact@v2
+      - name: upload-unit-test-result
+        uses: actions/upload-artifact@v2
         if: failure()
         with:
           name: test-result
