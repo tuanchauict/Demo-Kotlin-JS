@@ -1,7 +1,7 @@
 name: learn-github-actions
 on: [push]
 jobs:
-  check-bats-version:
+  Unit test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -9,7 +9,7 @@ jobs:
         with:
           java-version: 11
       - run: ./gradlew test
-      - name: upload-unit-test-result
+      - name: Publish Unit test result
         uses: actions/upload-artifact@v2
         if: failure()
         with:
