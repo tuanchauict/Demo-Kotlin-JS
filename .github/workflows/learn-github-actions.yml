@@ -10,6 +10,7 @@ jobs:
           java-version: 11
       - run: ./gradlew test
       - uses: actions/upload-artifact@v2
+        if: always()
         with:
           name: test-result
           path: build/reports/tests/test/index.html
