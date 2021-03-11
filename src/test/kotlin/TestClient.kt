@@ -10,6 +10,6 @@ class TestClient {
 
     @Test
     fun test2() {
-        assertEquals(1, 1)
+        assertEquals(1, 2)
     }
 } 
